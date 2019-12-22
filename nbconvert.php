@@ -123,15 +123,17 @@ function nbconvert_getHTMLByID($id, $html) {
     
 /* Code with UTF-8 support */    
     
-    $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+//    $dom->loadHTML('<?xml encoding="UTF-8">' . $html);
+      $dom->loadHTML('<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>' . $html);
 
-    foreach ($dom->childNodes as $item)
+
+
+/*    foreach ($dom->childNodes as $item)
         if ($item->nodeType == XML_PI_NODE)
             $dom->removeChild($item); 
             $dom->encoding = 'UTF-8';
-
+*/
 /* Changed by @andreiliphd */
-
 
     /* $dom->loadHTML($html);*/
     
